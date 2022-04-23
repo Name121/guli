@@ -4,7 +4,10 @@ import java.util.Arrays;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.atguigu.gulimall.coupon.config.systemconfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +28,26 @@ import com.atguigu.common.utils.R;
  * @email sunlightcs@gmail.com
  * @date 2022-04-20 21:38:21
  */
+@RefreshScope
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+    @Value("${user.name}")
+    private String name;
+
+    @Value("${user.age}")
+    private String age;
+
+    private systemconfig systemconfig;
+
+    @RequestMapping("/nacosConfig")
+    public R nacosConfig(){
+
+        return R.ok("name:" + name + ", age:"+ age + "." + systemconfig.getName());
+    }
 
     @RequestMapping("/member/list")
     public R memberCoupons(){
