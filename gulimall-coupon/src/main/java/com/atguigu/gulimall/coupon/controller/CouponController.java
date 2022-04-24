@@ -46,7 +46,8 @@ public class CouponController {
     @RequestMapping("/nacosConfig")
     public R nacosConfig(){
 
-        return R.ok("name:" + name + ", age:"+ age + "." + systemconfig.getName());
+//        return R.ok("name:" + name + ", age:"+ age + "." + systemconfig.getName());
+        return R.ok("name:" + name + ", age:"+ age);
     }
 
     @RequestMapping("/member/list")
