@@ -38,5 +38,10 @@ spring:
           uri: lb://gulimall-coupon
           predicates:
             - Path=/coupon/**
+#          filters:
+#            - StripPrefix=2
+#            - OpenParam
+#            - OpenAppInfo
+#            - OpenAddHeaders
 server:
   port: 88
