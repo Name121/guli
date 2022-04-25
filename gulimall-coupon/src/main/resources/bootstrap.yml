@@ -6,7 +6,7 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yml
-        namespace: c68fd13a-02fb-46ac-acfc-82c795374f4f
+        namespace: 06425ba4-d0ef-4283-b022-3bdf9cbfff61
 #        group: dev
         ext-config[0]:
           dataId: datasource.yml

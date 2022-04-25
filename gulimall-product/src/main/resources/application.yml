@@ -1,15 +1,16 @@
 spring:
   datasource:
 #    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.56.10:3306/gulimall_pms
+    url: jdbc:mysql://127.0.0.1:3306/gulimall_pms
     username: root
     password: root
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        namespace: 06425ba4-d0ef-4283-b022-3bdf9cbfff61
   application:
-    name: gulimall-prodoct
+    name: gulimall-product
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml

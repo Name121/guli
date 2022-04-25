@@ -6,6 +6,7 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
         namespace: 06425ba4-d0ef-4283-b022-3bdf9cbfff61
+#        group: dev
     gateway:
       discovery:
         locator:
@@ -43,5 +44,9 @@ spring:
 #            - OpenParam
 #            - OpenAppInfo
 #            - OpenAddHeaders
+        - id: gulimall-product
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/product/**
 server:
   port: 88
