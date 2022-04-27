@@ -13,6 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix="systemconfig")
 public class systemconfig {
-    
+
     private String name;
 }

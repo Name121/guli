@@ -1,5 +1,6 @@
 package com.atguigu.gulimall.product.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -20,6 +21,9 @@ import com.atguigu.gulimall.product.service.CategoryService;
 
 @Service("categoryService")
 public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity> implements CategoryService {
+
+//    @Autowired
+//    CategoryDao categoryDao;
 
     @Override
     public List<CategoryEntity> listWithTree() {
