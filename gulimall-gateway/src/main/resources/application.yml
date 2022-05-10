@@ -5,7 +5,7 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        namespace: 06425ba4-d0ef-4283-b022-3bdf9cbfff61
+#        namespace: 06425ba4-d0ef-4283-b022-3bdf9cbfff61
 #        group: dev
     gateway:
       discovery:
@@ -48,5 +48,20 @@ spring:
           uri: lb://gulimall-product
           predicates:
             - Path=/product/**
+
+        - id: product_route
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        - id: admin_route
+          uri: lb://renren-fast # 路由给renren-fast，lb代表负载均衡
+          predicates: # 什么情况下路由给它
+            - Path=/api/** # 默认前端项目都带上api前缀，
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+
 server:
   port: 88

@@ -1,21 +1,20 @@
 spring:
+  application:
+    name: gulimall-product
   datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/gulimall_pms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.10:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        namespace: 06425ba4-d0ef-4283-b022-3bdf9cbfff61
-    sentinel:
-      transport:
-        dashboard: localhost:8080
-        port: 8719
-
-  application:
-    name: gulimall-product
+#        namespace: 03d1c7bb-ce47-421b-9507-35f0f7beb953
+#    sentinel:
+#      transport:
+#        dashboard: localhost:8080
+#        port: 8719
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
